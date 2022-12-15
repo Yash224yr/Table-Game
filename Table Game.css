@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table{
+    background-color: white;
+    height: 400px;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table::before, .table::after{
+    content: "";
+    position: absolute;
+    top: 30%;
+    height: 150px;
+    width: 50px;
+    background-color: black;
+}
+.table::before{
+    animation: moveleft 3s 1.7s linear infinite;
+    left: 0;
+}
+.table::after{
+    right: 0;
+    animation: moveright 3s 1.9s linear infinite;
+}
+.ball{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: black;
+    animation: ballmove 3s  1s linear infinite;
+}
+@keyframes moveright{
+        0%{transform: translateY(0);}
+        25%{transform: translateY(130px);}
+        50%{transform: translateY(0);}
+        75%{transform: translateY(-119px);}
+        100%{transform: translateY(0);}
+}
+@keyframes moveleft{
+    0%{transform: translateY(0);}
+    25%{transform: translateY(-119px);}
+    50%{transform: translateY(0);}
+    75%{transform: translateY(130px);}
+    100%{transform: translateY(0);}
+}
+@keyframes ballmove{
+    0%{transform: translateX(0);}
+    25%{transform: translateX(-300px);}
+    50%{transform: translateX(0);}
+    75%{transform: translateX(300px);}
+    100%{transform: translateX(0);}
+}
